@@ -1,0 +1,58 @@
+---
+layout: post
+title: php/blogs etc
+tags:
+- Life
+status: publish
+type: post
+published: true
+meta:
+  btc_comment_counts: a:0:{}
+  btc_comment_summary: a:0:{}
+---
+Boy it's been a long time..
+
+Well back at it then.
+
+I've been spending some time with <a href="http://www.wordpress.com">wordpress </a>while setting up my <a href="http://www.acupuncturebrooklyn.com">mothers new website</a>. She wants to make it do all sorts of fancy things and she doesn't want to learn html or have to deal with php. The php (the language wordpress is written in) I can understand. Who wants to learn a programming language when all they want to do is make a web site...
+
+Alright I'm not sure if I was being sarcastic or not. If you want to edit the themes or add any functionality (like making appointments online) you'll need to know how to program. Never the less my mother doesn't want to make her website, she wants to use her website. She wants to be able to publish her articles and texts, do formatting and have pictures. Not crazy demands. Oh, and fonts too. A little more crazy as wordpress could care less about what font you write your post in, all that is decided in the easily editable theme. A theme to edit you need to know what css, html, and php are and how to use them to edit.
+
+Needless to say while she's doing ok with using her website, I still need to finish
+
+I like wordpress, I haven't been liking moveable type lately (the engine behind my site now) and while I know wordpress sites are slow, and don't hold up to load, (If digg or someone picks up a link your site is going down unless you've installed some sort of caching plugin installed. Which means you need to know about installing wordpress plugins. Which is no problem for me but for someone like my mother...) the system is quite flexible and easy to program for. So I can easily extend it to my needs and wants and whims. Which also means I might be more active on it.
+
+Currently I'm compiling php on my new install of leopard. I don't feel like playing with the default version (even though it is up to date) because I didn't get to pick any of the options. And for the hell of it, and so I have a place to refer to it, is my configure command.
+
+<blockquote>./configure \
+'--prefix=/usr/local/php5' \
+'--with-kerberos' \
+'--enable-mbstring' \
+'--with-curl' \
+'--with-curlwrappers' \
+'--with-xmlrpc' \
+'--with-xsl' \
+'--with-iconv' \
+'--with-zlib' \
+'--with-mysql=/usr/local/mysql' \
+'--enable-calendar' \
+'--enable-force-cgi-redirect' \
+'--enable-ftp' \
+'--enable-sockets' \
+'--enable-bcmath' \
+'--enable-exif' \
+'--enable-wddx' \
+'--enable-soap' \
+'--with-libxml-dir' \
+'--with-openssl=/usr' \
+'--with-mysqli=/usr/local/mysql/bin/mysql_config' \
+'--with-zlib-dir=/usr' \
+'--with-xmlrpc'</blockquote>
+
+And on another technical note. PHP 5.2.5 was released recently (thankfully I noticed before installing my not quite recently downloaded php 5.2.4) and it fixes among many other things.
+<blockquote>Fixed htmlentities/htmlspecialchars not to accept partial multibyte sequences.</blockquote>
+I don't want to get into <a href="http://en.wikipedia.org/wiki/UTF-8">utf8</a> and all the other stupid things php does wrong with character encodings. But let me put it this way, I'm dam happy most people stick with normal numbers and letters and not any of the extended other language stuff. I'm also dam happy for utf8 and I look forward to php6 which should have proper support for it.
+
+Well that's all for now.
+
+-Francis

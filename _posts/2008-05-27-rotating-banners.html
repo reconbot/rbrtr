@@ -1,0 +1,23 @@
+---
+layout: post
+title: Rotating Banners
+tags:
+- Photos
+- Roborooter.com
+- Tech
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '2'
+  openid_comments: a:1:{i:0;s:3:"733";}
+  btc_comment_counts: a:0:{}
+  btc_comment_summary: a:0:{}
+---
+Now on every page you'll get a different banner. Every single photo is taken by me (to the best of my knowledge - if you took it that will teach you to borrow my camera!) hand picked out of my gallery and then cropped and edited by me too to fit. I used iPhoto to crop the photos to get the aspect ratio (quick and easy) and then wrote a quick script to resize everything to fit.
+<blockquote>find . -type f -exec convert {} -resize 970x140 {}.970x140.jpg \;</blockquote>
+And that resized everything. I wrote a quick rand with a sprintf to generate the url. It's not automatic - it wont detect new photos but I can take the time to edit the range the next time I take the time to edit hundreds of photos.
+
+The real joy was finding a 97x14 swash of image I wanted to show. I'm not being sarcastic either. Everything looks different when put though constraints. It highlights parts of the photo that would otherwise be lost. Street signs stick out the most, I'll have large photo of trees and I'll have picked out a swash of photo I want to show and the street sign will be sticking up off to the side, but it stands way out where I didn't even know it was there before. There is even one photo where I took two swashes out of, there were two different photos I wanted to show.
+
+Enjoy =)

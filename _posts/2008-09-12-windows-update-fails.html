@@ -1,0 +1,39 @@
+---
+layout: post
+title: Windows update fails
+tags:
+- geek
+- Tech
+- Work
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '2'
+  btc_comment_counts: a:0:{}
+  btc_comment_summary: a:0:{}
+---
+I had a problem this week. I actually had the same problem lots of times. It was fustrating as hell.
+
+I had quite a few Windows XP instalations to do, with new employees soon to arrive at work, new laptops arriving with Vista, and some old desktops that needed 'decrufting' in their OSes. I have a slipstreamed windows xp cd with sp2 that I like to use. I haven't bothered updating it to sp3 because I haven't made the time and for a while I didn't think it was worth it. SP3 seems more for microsoft then it does for the users. I do have a new xp disk with ie7 and a few other updates, but I haven't tested it so much. So I tried it out and it seemed ok but I hit a problem.
+
+Windows Update would fail to install every single update after sp3 was installed.
+
+And once you hit Microsoft Update (which you should) it would fail to install the office updates too. No error codes, no event log messages (well maybe but I didn't look too closely) nothing useful. I figured it was my new disk so despite spending all the time reinstalling windows (my disk does make it easier, setup the partitions and walk away for 20 minutes and you have windows waiting for you when you get back) I tried with my older trusted disk. Same problems.
+
+It took me a while to figure out it was sp3.
+
+Well I have a fix. Run these commands.
+
+<code>::http://support.microsoft.com/kb/943144 for details use on 32bit winxp only
+net stop wuauserv
+regsvr32 %windir%\system32\wups2.dll
+net start wuauserv</code>
+
+Put that in a batch file or just run it and it will re-register the new sp3 windows update dll file and all your problems will go away. So in an effort to take pride in my work I decided to fix it twice. Once for the problem and again for the cause of the problem. According to the <a href="http://support.microsoft.com/kb/943144">knowledge base article </a>I found to fix it, if you update windows update (which is common after a reinstall) and don't restart before installing sp3 then sp3 will ignore the updated windows update and there will be a version missmatch when you try to update. So restart early and often when installing updates. I haven't tested it but in the back of my head there's a voice saing "I think other updates might cause this problem too!" so maybe even something other then sp3 can cause this, but I don't feel like collecting proof.
+
+That would involve "fixing it" 3 times and twice is enough for me today.
+
+-Francis
+
+<strong><span style="color: #ff0000;">UPDATE:</span></strong> So far this has only applied to new installs for me, but if you're worried you wont hurt anything by running those commands.

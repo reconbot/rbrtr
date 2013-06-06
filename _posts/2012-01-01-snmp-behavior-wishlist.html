@@ -1,0 +1,27 @@
+---
+layout: post
+title: SNMP Behavior Wishlist
+tags:
+- NOC
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '2'
+---
+From my few years of working in a <a title="Network Operations Center" href="http://en.wikipedia.org/wiki/Network_operations_center">NOC</a> I've seen a lot of stupid behaviors from devices in regards to monitoring and notifications. Here's my current list of gripes.
+
+I wish your app, monitoring product and/or device would take the following list into consideration when you decide to add SNMP Notification (trap) support.
+<ol>
+	<li>You probably don't need more then one custom trap. A few different traps for different types of notifications is fine. 30,000 different traps that all have identical structure is not ok. (I'm looking at you Symantec I3)</li>
+	<li>Use a different OID for each piece of information. Please don't make us use regex to pull out the data.</li>
+	<li>If you're trapping about a problem, trap about when the problem is resolved.</li>
+	<li>Cold/warm start, link up, link down and most of the other basic RFC traps that are well defined are more then welcome.</li>
+	<li>If you're going to tell me the status changed of something, tell me what it is! (I'm looking at you Arista Networks.)</li>
+	<li>If you're going to tell me the status changed  of something in particular, tell me how it changed!</li>
+	<li>Nobody ever got angry because you provided too much data. If I have to poll your device to find out what happened you're doing it wrong.</li>
+	<li>If there is extra data you might think is useful (Say the label on the port when you trap the port had a link down event.) please provide it. You can still do this and conform to the RFC spec.</li>
+	<li>SNMP V2c support is fine, nobody cares about V3. Feel free to support it but don't assume people will use it by default and don't make people jump though hoops to disable it.</li>
+	<li>Don't hold internal state of the "Alert" you're trapping about. If I have to manually log into your system and clear or acknowledge your alert before you'll tell me it happened again you're doing it wrong. (I'm looking at you RAD Data Comm.)</li>
+	<li>If you're reporting on state changes, tell me every state change every time! Nobody ever complained about too much data.</li>
+</ol>

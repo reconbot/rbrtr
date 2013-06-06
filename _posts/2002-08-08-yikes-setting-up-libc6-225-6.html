@@ -1,0 +1,25 @@
+---
+layout: post
+title: Yikes... Setting up libc6 (2.2.5-6) ...
+tags:
+- Life
+status: publish
+type: post
+published: true
+meta:
+  btc_comment_summary: a:0:{}
+  btc_comment_counts: a:0:{}
+---
+I just upgraded Petra to the latest release of libc6 and it broke apache. =0
+<br> So I popped into #debian to see if I could get some help. After getting yelled at for not
+reading the topic I finally got this after I suggest a simple configuration fix (which doesn't work).
+<code><p>peej: wizard_2 (sheesh, the lameness): either you use dpkg specifically on a downloaded non-latest
+package (man dpkg) or you tweak your sources list.</code>
+<p> *Cou(bitch)gh* just the kind of support and help everybody needs. Tweaking the source list to the "testing"
+packages doesn't work because apt doesn't want to downgrade packages. You can't remove libc6 because... well 318
+other packages need it. I even got this message when I tried. (hoping I could <em>just</em> remove it)
+<code><p>You are about to do something potentially harmful!<br>To continue type in the phrase 'Yes, do as I say!'</code><p>
+Not what I had in mind... anyway I ended up downloading the <em>.deb</em>s from "testing" and using dpkg to install them. It didn't care about over writing the currently installed version.<p>
+<code>apachectl start<br>/usr/sbin/apachectl start: httpd started</code><p>
+Success! And now you see what you see here. I think I'll keep the debs around in case apt decides to upgrade them before the bug is fixed.
+<br>-<a href="mailto:wizard@roborooter.com">Francis</a>

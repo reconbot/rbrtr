@@ -1,0 +1,36 @@
+---
+layout: post
+title: Apple Script
+tags:
+- Cool
+status: publish
+type: post
+published: true
+meta:
+  btc_comment_counts: a:0:{}
+  btc_comment_summary: a:0:{}
+---
+So I wrote a Shell Script.
+
+<code>cp -v `lsof |grep -i QTP| grep iTunes|awk '{ print $9 }'` ~/Desktop/currentmusicvideo.mov</code>
+
+And then <a href="http://www.macosxhints.com/users.php?mode=profile&uid=12882">someone else</a> wrote an applescript wrapper.
+
+<code>set originalFile to do shell script "lsof |grep -i QTP| grep iTunes|head -1|awk '{ print $9 }'"
+if length of originalFile is greater than 0 then
+set newFile to POSIX path of (choose file name with prompt "Save movie as:" default name "iTunes Video.mov")
+if length of newFile is greater than 0 then
+if newFile does not end with ".mov" then set newFile to newFile & ".mov"
+do shell script "cp -v '" & originalFile & "' '" & newFile & "'"
+end if
+else
+display dialog "No movie found." buttons {"OK"} default button "OK"
+end if</code>
+
+(Just to note this is hardly the only applescript made from my command line thing. It's just the best one. You can read the full macosxhints thread <a href="http://www.macosxhints.com/article.php?story=20040428183055735">here</a>.)
+
+I even found mention of it on <a href="http://www.malcolmadams.com/itunes/ixarch/arch.php?my=2004-04#043004">Doug's AppleScripts for iTunes</a>. And in case you haven't figured it out the script copies iTunes Movies (music or trailer) to your desktop.
+
+I'd also like to thank my friend Mike who helped inspire this one afternoon long ago. Before I thought "Hey lets pull this out of the cache!" we tried very many things, some of wich worked. We ended up making a wget command and spoofing the useragent. Ettercap's http stream grabbing doesn't work very well - we both concluded on that.
+
+-Francis

@@ -1,0 +1,37 @@
+---
+layout: post
+title: You Laugh You Lose
+tags: []
+status: draft
+type: post
+published: false
+meta:
+  _edit_last: '2'
+---
+Recently <a href="http://blog.nodejitsu.com/you-laugh-you-lose " target="_blank">I won a trip to NodeConf</a> (a conference about nodeJS) by making a cool little game called "You Laugh You Lose". It was created in 17 hours at NodeJitsu's "Hack Nodeconf Hackathon". After a full days work my friend <a href="http://twitter.com/koudelka" target="_blank">Mike</a> and myself wandered over to Pivotal Lab's awesome offices near union square and proceded to stay up for the next 24 hours. This blog post is about how that went.
+
+First off get a cool browser and <a href="http://ylyl.jit.su/" target="_blank">play the game</a>!
+<h3>Inception</h3>
+Me: Hey @koudelka want to help me win a ticket to nodeconf?
+Mike: Sure <a href="http://twitter.com/voidburger" target="_blank">@voidburger</a> has a funny idea, we show funny pictures and do smile detection and if you laugh you lose.
+Me: We should totally plan this out!
+Mike: Lets goto the beach and do it there!
+Me: That sounds perfect.
+
+There was no planning. But who cares?
+<h3>Libraries</h3>
+<ul>
+	<li><a href="http://backbonejs.com" target="_blank">Backbone JS</a> for the "client game" application.</li>
+	<li><a href="http://socket.io/" target="_blank">Socket.IO</a> for sending game events.</li>
+	<li><a href="http://expressjs.com/" target="_blank">express</a> for serving the single static page.</li>
+	<li><a href="https://github.com/talvarez/Face.js" target="_blank">Face.js</a> for detecting faces and smiles.</li>
+</ul>
+<h3>Basic Plan</h3>
+We used express to render our one index template and serve static files. So far so good. We used socket.io to connect people to the game. A socket connection is a game connection. A socket disconnection is a game disconnection. What? No disconnect events? (we were doing it wrong) ok.. we'll ignore that. What about the webcam?
+
+Flash - every webcam library sucks.
+WEB RTC - Never heard of it.
+
+getUserMedia() oOOo what's this? (It's web rtc.)
+
+https://github.com/maxogden/domnode-usermedia did not yet exist

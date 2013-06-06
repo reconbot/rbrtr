@@ -1,0 +1,34 @@
+---
+layout: post
+title: Life in the NOC
+tags:
+- NOC
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '2'
+---
+As you may know I work in a Network Operation Center or as my business card says "THE NOC". What is life like in the NOC?
+
+My team is responsible for monitoring a large number of hardware devices (Are they working? Did something break? Is it fixed?), servers (Are they responding? How's their storage? Is something trying to kill it?) applications (Is it running? Why did it crash? Can it start up again?), and business processes (Did these jobs fail? Will they succeed before someone needs them? Can they be rerun?) It's a broad set of responsibilities and it involves working with many different teams.
+
+One of the more interesting parts of my job is monitoring a new device or application. It usually goes like this. "We've just purchased something new and we want it to send it's alerts to you. Can you make that happen?" Why of course! Someone from that team will ask a few questions, turn on "SNMP" on the device, point the "traps" at our servers and walk away. My team will see these "alarms" and panic. It usually look like a cross between mayhem and spam. Neither are good and frankly I don't want either of them on my watch. There is sometimes some yelling. "Hey knock that off!" "No! This is important!" And then we sit down and work things out. Let me give you some background first.
+
+SNMP for the purposes of this story is a simple way for things to send us messages. These messages when sent to us are called "traps". Things send us messages about anything they want to. Maybe they're hungry. Maybe they just turned on. More often then not they speak up when something goes wrong and it's usually along the lines of "Help I've lost power!" or "I HAD AN ERROR!" or "My eighth port on card 23 had too many collisions in the last 30 seconds!".
+
+My systems listen to these messages and decides what's important and creates Alerts for my team to respond to. These are along the lines of "Pardon me sir, A switch named core-12 in New York is seeing too many errors on the following ports. Here are the procedures for this type of thing and here are the tickets from when they happened last week. Do have a nice day." I've trained my systems to be very polite.
+
+When a device is set to send us all their messages, my system does it's best to guess what's important and ignores the rest. It's harsh but necessary. There are some standard messages that most devices know. (some useful some not) but there is such a plethora of useless chatter that it would be very troublesome to pay attention to all of it. That stuff gets recorded but not alerted. "Why yes that's very interesting that you just did that thing. I can tell it's very important to you, I'll write that down and put it over here for later."
+
+Often the devices don't know how to tell you what's wrong, or tell when anything happens but not what happened. "I need help." or "Hey, I saw something!" Neither are helpful. Helpful devices will be very specific and tell you when problems go away. "I lost something." followed by "Hey I found it again!" is a very nice occurrence and my system knows it can resolve that Alert and we can all go on with life.
+
+Today I found a device that didn't want to bother me. If it had an issue it would tell you, but only the first time. "I lost power! but.. I lost power a few weeks ago, I shouldn't bother you with that again. I'll keep it to myself." I don't understand why someone would make a device like that.
+
+I wasn't honest before. Applications can talk SNMP too. It's not just for devices. Most of the applications that talk to my system do it poorly and I know who made them do it. They sit on the other side of my office and while I'm not a mean person, I do judge their work quite harshly. They're notorious for spam. You see, if you can tell a computer to send a message once, you can easily tell it to send a message a million times. Or even better, you can tell it to send you a message every time it thinks something. A ton of messages from an application that deals with city dog registration isn't helpful if all it tells you is "I thought about dogs." every time a dog comes up in conversation. In fact that's a bit rude. I'm often asked to ignore things "for now". Could you ignore that for very long?
+
+To be fair application programmers don't want to be rude. Their application was made to do a task not alert about it. They usually do the task very well and that is most important. But when things go wrong (and they will, and soon) how they tell my team suddenly matters and is the difference between the right reaction and an very slow wrong reaction. Imagine if the dog registration program was handed a cat and decided it couldn't work with any more dogs until someone took this cat away. Does it even know what a cat is? Can it say "I have a cat and I'm stumped what to do with it. Its not very dog like at all." or will it just say "I can't think about this dog!". One message will make sense to me and I'll be able to help, the other will not and I wouldn't be able to guess what it meant.
+
+I hold that it is important to talk to your NOC before sending us any new messages. But it's a step that's often forgotten.
+
+I've barely scratched the surface of what life in the NOC can be like, But I should stop myself before I go on for too long. I hope this gives you a greater understanding some of what we do. I also hope it helps garner a greater respect for your local NOC workers in your neighborhood or city.

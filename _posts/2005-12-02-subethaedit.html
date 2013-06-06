@@ -1,0 +1,25 @@
+---
+layout: post
+title: SubEthaEdit
+tags:
+- Work
+status: publish
+type: post
+published: true
+meta:
+  btc_comment_counts: a:0:{}
+  btc_comment_summary: a:0:{}
+---
+<a href="">SubEthaEdit</a> is a really nifty text editor with sytax highlighting. What does that mean?
+
+<span style="color:#dd0000;">&lt;?php</span><br /><span style="color:#881350;">require_once</span>(<span style="color:#eb7300;">'core/core.php'</span>);<br /><span style="color:#236e25;">//header smarty<br /></span><span style="color:#825900;">$smarty</span>-&gt;<span style="color:#003369;">assign</span>(<span style="color:#eb7300;">'title'</span>,<span style="color:#eb7300;">'Homepage'</span>);<br /><span style="color:#825900;">$smarty</span>-&gt;<span style="color:#003369;">assign</span>(<span style="color:#eb7300;">'location'</span>,<span style="color:#eb7300;">'home'</span>);<br /><span style="color:#236e25;">//end header smarty<br /></span><span style="color:#825900;">$smarty</span>-&gt;<span style="color:#003369;">assign</span>(<span style="color:#eb7300;">'mainwelcome'</span>, <span style="color:#eb7300;">'Please choose a component to use.'</span>);<br /><span style="color:#825900;">$smarty</span>-&gt;<span style="color:#003369;">assign</span>(<span style="color:#eb7300;">'maincomponents'</span>, <span style="color:#881350;">array</span>(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#881350;">array</span>(<span style="color:#eb7300;">'url'</span> =&gt; <span style="color:#eb7300;">'dataimport/'</span>, <span style="color:#eb7300;">'title'</span> =&gt; <span style="color:#eb7300;">'Data Import'</span>, <span style="color:#eb7300;">'desc'</span>=&gt;<span style="color:#eb7300;">'This is where you manage importing datafiles.'</span>),<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#881350;">array</span>(<span style="color:#eb7300;">'url'</span> =&gt; <span style="color:#eb7300;">'export/'</span>, <span style="color:#eb7300;">'title'</span> =&gt; <span style="color:#eb7300;">'Export'</span>, <span style="color:#eb7300;">'desc'</span>=&gt;<span style="color:#eb7300;">'Here you can export data in predefined formats.'</span>),<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#881350;">array</span>(<span style="color:#eb7300;">'url'</span> =&gt; <span style="color:#eb7300;">'datavalidation/'</span>, <span style="color:#eb7300;">'title'</span> =&gt; <span style="color:#eb7300;">'Data Validate'</span>, <span style="color:#eb7300;">'desc'</span>=&gt;<span style="color:#eb7300;">'Here you can validate data.'</span>),<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;));<br /><span style="color:#825900;">$smarty</span>-&gt;<span style="color:#003369;">display</span>(<span style="color:#eb7300;">'indexmain.tpl'</span>);<br /><span style="color:#dd0000;">?&gt;</span>
+
+(That's some simple php code I use in a project.)
+
+Each element of the sytax is highlighted and it really assists in editing. But syntax highlighting is nothing new. SubEthaEdit brings in network sharing of a document and other nifty things you can read about everything on your own.
+
+I bring this all up because I added the extension tpl to the smarty-html mode. You can download it <a href="http://www.roborooter.com/ftp/HTML-Smarty.mode-with-.tpl.zip">here</a>. I did it because I was sick of all my .tpl files not automaticly highlighting. (.tpl is smarty's default file extension for template files.) And I put it here to show off SubEthaEdit and it's html export and because at least one person I know will find it useful.
+
+I learned of one extra feature from SubEthaEdit today called block editing. There's a <a href="http://www.codingmonkeys.de/subethaedit/goodies/blockedit.mov">movie</a> showing it off and may I say, god dammed that's really cool.
+
+-Francis

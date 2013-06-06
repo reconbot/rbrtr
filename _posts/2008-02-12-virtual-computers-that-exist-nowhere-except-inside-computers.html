@@ -1,0 +1,52 @@
+---
+layout: post
+title: Virtual Computers (that exist nowhere except inside computers)
+tags:
+- Tech
+status: publish
+type: post
+published: true
+meta:
+  btc_comment_summary: a:0:{}
+  btc_comment_counts: a:0:{}
+---
+I'm currently in the market for a new desktop. There are a few things I want to do with it, and they range from pretty simple requirements that barely need mentioning, to some pretty complex ideas.
+<ol>
+<li>Large amount of protected storage. Raid 5</li>
+<li>Ability to play somewhat recent games. I don't play often but the occasional title catches my eye and I'd like to be able to try it out.</li>
+<li>Large amount of protected storage. Raid 5, having a single disk, actually bothers the hell out of me.</li>
+<li>I want to be able to play movies over the network from my server. Yes that's a requirement. Though by now it should be filled</li>
+</ol>
+
+Scratch that. I've got some thoughts on my computing setup in total. First off, what I currently have.
+<ul>
+<li>A Macbook Pro, 2.33 GHz Intel Core 2 Duo with 3 gigs of ram and a 200 Gig hd. I back this up to a 300 gig external every so often. It's my primary machine by far. I program and do unixy things on it mostly. I constantly wish it had more hd space mainly because it houses my 60 gig music collection too. Leopard and XP in bootcamp and via Parallels (Even though I own VMware and I trust it more. Also XP has 20 gigs of hd.)</li>
+<li>A recently deceased Intel P4 with 2 gigs of ram and two hard drives 80 and 120 gig, running windows xp. It was old enough not to play new games. (No bioshock, but Portals ran just fine.) Lately I mostly used it to play movies and be a synergy server for my laptop (keyboard and mouse sharing).</li>
+<li>A low end AMD server with some ram (512?) and a 1.5TB raid 5. It runs uTorrent, tversity (to stream movies to an xbox 360 which isn't mine) and does it all in Windows 2003 server. I had a plan to host offsite backups that required windows 2003 server, but I've long since abandoned that stupid idea. It wasn't worth it. Now because of the windows domain the server is in my mac wont smb mount it's massive data storage reliably and I'm using ftp/http for file transfer.</li>
+<li>The router is an even lower powered amd box with some ram and an underused 80 gig hard drive running IPcop. It works as a router just fine. It's also a caching transparent squid proxy with logging disabled to protect the guilty users who use it (sorta - not from authorities but from my other roommates). It's got shit vpn capabilities and it doesn't do anything else, but it doesn't need to.</li>
+</ul>
+
+Some things I'd like to do.
+<ul>
+<li>Run a lamp/svn stack at home not on my laptop and with a decent amount of storage available.</li>
+<li>Have a vpn that I can connect to on my mac and on windows with no extra software. And little fuss.</li>
+<li>Have my movies mountable on my mac. The fact that they are all sitting on a 1.5 TB raid formatted NTFS that's almost full makes portability tough.</li>
+<li>Still stream movies to the xbox, that is a wonderful feature.</li>
+<li>Not spend hours and days of my life dealing with the nitty gritty of linux.</li>
+</ul>
+
+I haven't tried ubuntu, It's supposed to be a lot better then linux was 5 years ago during my debian days. Five years seems like a long time too, but I for some reason refuse to believe anything has changed. I need to go get a live cd. OSX lets me run apache, mysql, and php. I can compile anything I want fairly easily, and it's pretty. Long ago it replaced linux in my life.
+
+But linux might come back. I'm attracted to keeping things partitioned. I've had a lot of servers hacked and learned I don't want to be a security expert. It's tough and nothing is impossible to break into. You just have to keep backups, keep things separate, and have a few layers between you and anything else. There's a limit to the defense in depth in my opinion. If you're letting packets into a program, regardless of how firewalled it is. If it's exploited it's exploited. I'm a little too paranoid to run public services from home anyway.
+
+Back to partitioning. I'm attracted to virtual machines, which while they run on the same hardware they are separate (enough). And you can run more then one at once. It used to be that virtual machines were slow and slowed everything else down. They sucked a lot. Now they've got built into hardware instructions on how to operate at a virtual level, while looking like you're working at a normal level. Long story short, You can boot up an operating system on it's own, or inside another operating system and it wont be the wiser.
+
+I'm still learning exactly what that means. How do two os's use hardware? Sound cards? Video cards? Obviously somethings need to be put on hold, or switched between OS's. Also they got something they call Paravirtualization, which instead of the OS running on your hardware totaly, it runs on some virtual hardware (sorta like what VMware does with the graphics hardware). With that you can get near native speeds and reduce a lot of the overhead involved in running a virtual os.
+
+I would like to be able to take care of some of my wants and needs by using virtualization, but I'm not sure if the technology is mature enough for me to play with it.  (by all means, this stuff works, and it is being used a lot) It's got to be easy and I got to be able to play my games. I also don't want to invest hundreds of hours into it.
+
+In the end I'll probably just dual boot. For gaming virtualization is stupid. I'd want it for multiple dev environments. But honestly I'd want it for multiple servers mostly.
+
+Grr... I guess I just talked myself out of playing with Xen for my desktop machine. I still got to figure out a way to migrate my server to linux.
+
+Hope Some of that is useful to somebody.

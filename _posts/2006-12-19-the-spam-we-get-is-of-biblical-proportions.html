@@ -1,0 +1,41 @@
+---
+layout: post
+title: The spam we get is of biblical proportions
+tags:
+- Work
+status: publish
+type: post
+published: true
+meta:
+  btc_comment_counts: a:0:{}
+  btc_comment_summary: a:0:{}
+---
+Spam is a problem, and at my day job it seems to be an ever increasing one. We have two main methods of blocking spam, but lets start at the beginning.
+<br/><br/>
+Our server accepts an email to a valid address. (And tells the server to bugger off if there's no account here by that name.) Its scanned for virus's and email client exploits, as well as blocking encrypted archives, scanning inside archives and scanning for macros in Microsoft Office documents. This stops a great deal of mail but not the majority of it. Next it's put through a gauntlet of checks making sure it's not spam. There are 12 modules that check the message, a collection of black list and white lists (sorta <a href="http://en.wikipedia.org/wiki/Greylisting">Greylisting</a>) that can reject, accept, or pass on a message and send it down the chain. We have a large collection of manually added white listed addresses and automatically entered whit listed addresses. The mailsystem scans both incoming and outgoing mail for both content (bayesian) and email addresses. So if you email someone the reply won't get caught up as spam.
+<br/><br/>
+We also employ real time black lists (or RBLs), which checks the ip and hostname of the server sending the messages (does a dns lookup) and checks it against several (we're using 3 different sources right now) databases of ips that flag for spam, and abuse. These services have vast networks that just receive spam and virus attacks and log and identify them so other people can block them.
+<br/><br/>
+We have a spam cache, we don't send the spam to our users junk folders, most of them don't want to see it. out of the past 12,746 messages, 7,246 of them were caught with the RBL, and 5220 of them with the bayesian content filtering. And yet, still many get through. We get about 2000 spam a day caught and I think that's only about 95%. Work that out over around 70 some odd users and that's about 30 spam per person per day. Which sounds about average.
+<br/><br/>
+But biblical?
+<br/><br/>
+Well
+<br/><br/>
+<pre>SUBJECT: And Saul as I have gone out, of Jephunneh.  And thy God, surely there
+MESSAGE: to meet with water: Which the reward for thou, was under the land slew
+
+SUBJECT: certain woman when the became a word shall be kept the flock,
+MESSAGE: vessels: thereof, three hundred made before thee, and took Ishmael
+
+SUBJECT:no; more, to his days and the great price.  But thou
+MESSAGE: promised to the posts thereof, are all the men and when they have left
+
+SUBJECT:Jekamiah, and is thou in peace from Assyria; have access
+MESSAGE: shall the son that remain, in it If not on the rough wind into</pre>
+<br/>
+That's not even a little of it. Eventually they started coming it with the quote and image spam. Pictures with text advertising drugstores and stock tips. The first messages were to soften up our spam filter to let the other ones though. Go figure.<br/>
+<br/>
+-Francis<br/>
+<br/>
+PS I get about 150 - 200 messages a day over a handful of accounts and my osx Mail app misses about.. 20 or so. While it's % caught is not very high it's a lot lower volume then at my 9-5.

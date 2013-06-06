@@ -1,0 +1,25 @@
+---
+layout: post
+title: Perl Array Conventions
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  aktt_notify_twitter: 'no'
+  btc_comment_counts: a:0:{}
+  _edit_last: '2'
+  btc_comment_summary: a:0:{}
+---
+<code>$array[0]   # First element of @array
+@array[0]   # Slice of only the First element of @array
+%array[0]   # Syntax error
+$array-&gt;[0] # First element of an array referenced by $array
+@array-&gt;[0] # Deprecated first element of @array
+%array-&gt;[0] # Invalid reference
+$array{0}   # Element of %array referenced by string '0'
+@array{0}   # Slice of only one element of %array referenced by string '0'
+%array{0}   # Syntax error
+$array-&gt;{0} # Element of a hash referenced by $array
+@array-&gt;{0} # Invalid reference
+%array-&gt;{0} # Deprecated Element of %array referenced by string '0'</code>

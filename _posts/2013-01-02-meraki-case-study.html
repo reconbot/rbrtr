@@ -1,0 +1,39 @@
+---
+layout: post
+title: Meraki Wireless AP's and Routers a Case Study
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '2'
+  _wpas_done_all: '1'
+---
+Meraki is a "100 Percent Cloud Managed" switch, this means you have less control in the long run but possibly more options and everything should be easier use. That's the idea anyway.
+
+I have a small office (15 people) with about 1500 square feet, poor wiring, and a ton of devices. The devices are mostly printers, ipads, laptops and smart phones. We have events a few times a month with any number (0-30) of wireless devices wanting internet access.  Our existing setup (two linksys routers) was not reliable enough for either situation.
+
+Existing infrastructure had Ethernet over copper, telephone and cable demarcated in a coat closet as well as about 15 drops scattered around the office. The drops were all left hanging. It's an old mixed use (commercial/residential) space which means none of these are installed in any reliable way. Fortunately for me the wiring all worked.
+
+The design would be simple. Two to three low power Access Points, a real router, and a switch for the drops. I was interested in a few "features". Traffic shaping, a guest network, multiple internet connections, alerting and monitoring. My research left me looking at two vendors for the AP's and the router. Meraki and Cisco (It should be noted that Cisco now owns Meraki.) I've since lost my notes but the list prices were about 25% to 50% less for the Meraki hardware that claimed to support most of the same features. However it requires a support contract to function as opposed to cisco gear which just recommends it. I'll talk more about the trade offs later, but if you've never worked with cisco gear, you'll probably want to go Meraki.
+
+I decided on two <a href="http://www.meraki.com/products/wireless/mr16">MR16</a>'s with a possible 3rd after a site survey (I didn't need it), a <a href="http://www.meraki.com/products/appliances/mx60">MX60</a> and a <a href="http://www.newegg.com/Product/Product.aspx?Item=N82E16833122153">NETGEAR GS716T</a>.
+<img class="aligncenter size-full wp-image-1434" src="http://www.roborooter.com/wp-content/uploads/2013/02/mr24-guts.png" alt="mr24-guts" width="507" height="600" />
+
+The Meraki setup was easy. (The NETGEAR was too but it tried really hard not to be.) The AP's have good antennas and range. The webconsole is great, and while not everything is fully baked (vlans for example are obviously an afterthought) I haven't hit any blockers for this simple setup.  The best way to get a feel for the console is to try it out. <a href="http://www.meraki.com/lp/free-demo">They let you do that easily</a>. However there is no command line to drop in to if you need something the console doesn't cover.
+
+<p>I had a simple request of their tier 1 support, to see the upstream traffic from my router. The only traffic graph they provide is "combined" upstream and downstream. How is it combined? They don't know. Is the info available any other way? They don't know. After 3 days trying to communicate my request I finally got the request escalated and found out the SNMP mib on the AP's support interface statistics, but not on the router. So I can use an external system to log the traffic throughput on the AP's.  That's the best they can do? They did however log my question as a  feature request.</p>
+
+<p>I used a <a href="http://needwire.com/">local contractor</a> to rejack and patch the existing drops and demarks. They did a wonderful job. Everything was wired up online and I thought it was all done. I was happy.</p>
+
+<p><img class="aligncenter size-medium wp-image-1438" src="http://www.roborooter.com/wp-content/uploads/2013/01/wiring-before-and-after-600x400.png" alt="Wiring before and after" width="600" height="400" /></p>
+
+<p>However two weeks into it's service my licence was removed from my account. Something was going on in their supply chain. I paid for everything but the order didn't register correctly. My local Meraki rep stopped responding to my emails and I had a "licence expired" message when I logged in the control panel. I was cut off.</p>
+
+<p>What happens when the cloud cuts you off? In Meraki's case not a whole lot. They have to manually disable your account and fortunately for me, nobody bothered shut me down even though it looked as if I didn't pay. If it were a slow week and they bothered with me, I'm told I'd loose access to the control panel and possibly the router or AP's would stop functioning. I've gotten conflicting responses. Which is troublesome.</p>
+
+<p>It took another two weeks to correct their records and reinstate my licence. They told me I shouldn't worry about being cut off. But this was not a good experience.</p>
+
+<p>My users on the other hand don't know anything about any of this. The internet works better than ever before and there's signal everywhere. They love it.</p>
+
+<p>So using my one datapoint, I can say overall I'm pleased with the equipment and price. It does everything I need so far, but I worry for the first time I really need support. While my needs are only SOHO, in the enterprise we'd need more in the terms of alerting and monitoring. Email alerts are not enough. Hopefully Cisco will help iron out their supply chain and support processes. It would be a shame if it ruined them, I like their products.</p>
